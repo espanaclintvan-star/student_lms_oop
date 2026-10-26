@@ -33,12 +33,11 @@ class mainPageStudent extends JFrame implements ActionListener{
     JButton settingsButton;
 
     
-    public mainPageStudent(Login logINS) {
-        this.loginref = logINS;
-
+    
+    public mainPageStudent(/*Login logINS*/) {
+        //this.loginref = logINS;
+        
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
-        //setMinimumSize(new Dimension(500,500));
         setSize(500, 500);
         setLayout(new BorderLayout(5,5));
         logo = new ImageIcon("logo_edited.png");
@@ -150,6 +149,7 @@ class mainPageStudent extends JFrame implements ActionListener{
 
         mainPanel = new JPanel();
             mainPanel.setBackground(Color.GREEN);
+            
         add(mainPanel, BorderLayout.CENTER);
         
 
@@ -184,8 +184,13 @@ class mainPageStudent extends JFrame implements ActionListener{
             mainPanel.repaint();
         }
         if(e.getSource()==ClearanceButton){
-            System.out.println("clearance");
-        }
+            clearance Clearance = new clearance(this);
+            mainPanel.removeAll();
+            mainPanel.setLayout(new BorderLayout());
+            mainPanel.add(Clearance, BorderLayout.CENTER);
+            mainPanel.revalidate();
+            mainPanel.repaint();
+        }   
         if(e.getSource()==ScheduleButton){
             System.out.println("sched");
         }

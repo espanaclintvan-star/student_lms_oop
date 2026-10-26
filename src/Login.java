@@ -113,8 +113,8 @@ public class Login extends JFrame implements ActionListener {
 
             switch(checkbox){
                 case "student":
-                    new mainPageStudent(this);
-                    this.setVisible(false);
+                    //new mainPageStudent(this);
+                    //this.setVisible(false);
                     break;
                 case "admin":
                     System.out.println("ADMIN");
